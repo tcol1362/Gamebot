@@ -82,12 +82,12 @@ class roll(commands.Cog):
         await ctx.send("An issue has occurred with this command. Please contact your administrator for this bot.")
 
     # !roll_help command to display description
-    @commands.command(brief=': command list of "!roll" commands')
+    @commands.command(brief=': command list of "roll" commands')
     async def roll_help(self,ctx):
-        await ctx.send('Examples of the "!roll" command:\n100  Rolls 1-100.\n50-100  Rolls 50-100.\n3d6  Rolls 3 d6 dice and returns total.\nModifiers:\n! Hit success. 3d6!5 Counts number of rolls that are greater than 5.\nmod: Modifier. 3d6mod3 or 3d6mod-3. Adds 3 to the result.\n \> Threshold. 100>30 returns success if roll is greater than or equal to 30.\n\nFormatting:\nMust be done in order.\nSingle die roll: 1-100mod2>30\nMultiple: 5d6!4mod-2>2')
+        await ctx.send('Examples of the "roll" command:\n100  Rolls 1-100.\n50-100  Rolls 50-100.\n3d6  Rolls 3 d6 dice and returns total.\nModifiers:\n! Hit success. 3d6!5 Counts number of rolls that are greater than 5.\nmod: Modifier. 3d6mod3 or 3d6mod-3. Adds 3 to the result.\n \> Threshold. 100>30 returns success if roll is greater than or equal to 30.\n\nFormatting:\nMust be done in order.\nSingle die roll: 1-100mod2>30\nMultiple: 5d6!4mod-2>2')
 
     # Parse !roll verbiage
-    @commands.command(pass_context=True, brief=': dice roll command.\n For full list of dice commands, try "!roll_help".')
+    @commands.command(pass_context=True, brief=': dice roll command.\n For full list of dice commands, try "roll_help".')
     async def roll(self, ctx, roll : str):
         a, b, modifier, hit, num_of_dice, threshold, dice_type = 0, 0, 0, 0, 0, 0, 0
         # author: Writer of discord message
